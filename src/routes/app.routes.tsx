@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from '../screens/HomeScreen';
 import TeamScreen from '../screens/TeamScreen';
+import PlayersScreen from '../screens/PlayersScreen';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 const Stack = createStackNavigator();
@@ -34,6 +35,21 @@ const HomeStack = () => {
           headerTintColor: '#000',
         }}
         component={TeamScreen}
+      />
+      <Stack.Screen
+        name="PlayersScreen"
+        options={{
+          headerTitle: 'Team Players',
+          headerTitleStyle: { fontFamily: 'Arial', fontStyle: 'italic' },
+          headerBackTitleStyle: {
+            color: '#000',
+            fontFamily: 'Arial',
+            fontStyle: 'italic',
+          },
+          headerBackTitle: 'Back',
+          headerTintColor: '#000',
+        }}
+        component={PlayersScreen}
       />
     </Stack.Navigator>
   );

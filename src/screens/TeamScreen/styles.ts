@@ -8,10 +8,11 @@ export const Container = styled.ScrollView.attrs({
 `;
 
 export const Image = styled.Image`
-  width: 100%;
+  width: 80%;
   height: ${({ theme }) => theme.responsive.value(300)}px;
   border-radius: 5px;
   align-self: center;
+  margin-top: 10px;
 `;
 
 export const DataContainer = styled.View`

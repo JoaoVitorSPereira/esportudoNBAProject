@@ -33,7 +33,7 @@ export default function TeamScreen({
         <LoadSpinner />
       ) : (
         <>
-          <Image source={{ uri: team[0]?.logo }} />
+          <Image source={{ uri: team[0]?.logo }} resizeMode="stretch" />
           <DataContainer>
             <TeamName>Team Name: {team[0]?.name}</TeamName>
             <TeamNickname>Nickname: {team[0]?.nickname}</TeamNickname>
