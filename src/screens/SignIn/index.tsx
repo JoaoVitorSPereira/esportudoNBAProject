@@ -3,9 +3,13 @@ import React from 'react';
 import TouchID from 'react-native-touch-id';
 
 import { Alert } from 'react-native';
-import * as S from './styles';
+
+import NBALogo from '../../assets/icons/nbaLogo.svg';
+
+import { Container, Title } from './styles';
 
 import { useAuth } from '../../hooks/auth';
+import Button from '../../components/Button';
 
 export default function SignIn() {
   const { signInAsyncStorage } = useAuth();
@@ -36,11 +40,10 @@ export default function SignIn() {
   }
 
   return (
-    <S.Container>
-      <S.Title>Sign In to find your favorite NBA team</S.Title>
-      <S.LoginButton onPress={() => handleAuthenticate()}>
-        <S.LoginButtonText>Sign In.</S.LoginButtonText>
-      </S.LoginButton>
-    </S.Container>
+    <Container>
+      <NBALogo style={{ width: 200, height: 200, marginBottom: 30 }} />
+      <Title>Sign In to find your favorite NBA team</Title>
+      <Button title="Sign In" onPress={handleAuthenticate} />
+    </Container>
   );
 }

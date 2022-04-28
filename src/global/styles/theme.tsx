@@ -8,7 +8,6 @@ export default {
     buttonBackground: '#202125',
     darkGray: '#E9E9E9',
     lightGray: '#F6F6F6',
-    blue: '#1890FF',
   },
   responsive: {
     value: RFValue,
