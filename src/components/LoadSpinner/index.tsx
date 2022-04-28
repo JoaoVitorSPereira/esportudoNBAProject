@@ -6,7 +6,7 @@ import { ActivityIndicator } from 'react-native';
 export default function LoadSpinner() {
   return (
     <ActivityIndicator
-      size={20}
+      size="large"
       color={theme.colors.black}
       style={{ marginTop: 20 }}
     />

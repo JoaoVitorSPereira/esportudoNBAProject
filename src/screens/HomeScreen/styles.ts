@@ -33,3 +33,7 @@ export const TeamImage = styled(Image)`
   width: ${({ theme }) => theme.responsive.value(118)}px;
   height: ${({ theme }) => theme.responsive.value(73)}px;
 `;
+
+export const ButtonContainer = styled.View`
+  padding: 0px 20px;
+`;
