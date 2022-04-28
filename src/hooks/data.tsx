@@ -18,9 +18,11 @@ interface IDataContextData {
   getAllTeams(): Promise<void>;
   getTeamData(id: number): Promise<void>;
   getPlayersData(id: number): Promise<void>;
+  getPlayerData(id: number): Promise<void>;
   teams: TeamModel[];
   team: TeamModel[];
   players: PlayersModel[];
+  player: PlayersModel[];
   isLoading: boolean;
 }
 
@@ -30,6 +32,7 @@ function DataProvider({ children }: DataProviderProps) {
   const [teams, setTeams] = useState<TeamModel[]>([]);
   const [team, setTeam] = useState<TeamModel[]>([]);
   const [players, setPlayers] = useState<PlayersModel[]>([]);
+  const [player, setPlayer] = useState<PlayersModel[]>([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -95,11 +98,32 @@ function DataProvider({ children }: DataProviderProps) {
     }
   }
 
+  async function getPlayerData(id: number) {
+    try {
+      setIsLoading(true);
+      const playerData = await api.get(`/players?id=${id}`, {
+        headers: {
+          'X-RapidAPI-Host': `${API_HOST}`,
+          'X-RapidAPI-Key': `${API_KEY}`,
+        },
+      });
+
+      if (playerData.status === 200) {
+        setPlayer(playerData.data.response);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+      setIsLoading(true);
+    }
+  }
+
   const values = useMemo(
     () => ({
       getAllTeams,
       getTeamData,
       getPlayersData,
+      getPlayerData,
     }),
     [],
   );
@@ -115,6 +139,7 @@ function DataProvider({ children }: DataProviderProps) {
         teams,
         team,
         players,
+        player,
         isLoading,
       }}
     >

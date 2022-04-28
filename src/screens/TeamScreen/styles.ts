@@ -1,9 +1,7 @@
 import { RectButton } from 'react-native-gesture-handler';
 import styled, { css } from 'styled-components/native';
 
-export const Container = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
+export const Container = styled.View`
   flex: 1;
 `;
 
@@ -21,7 +19,7 @@ export const DataContainer = styled.View`
 
 export const TeamName = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.responsive.value(25)}px;
+    font-size: ${theme.responsive.value(20)}px;
     font-family: 'Arial Bold';
     margin-top: ${theme.responsive.value(10)}px;
     margin-bottom: ${theme.responsive.value(7)}px;
@@ -30,7 +28,7 @@ export const TeamName = styled.Text`
 
 export const TeamNickname = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.responsive.value(25)}px;
+    font-size: ${theme.responsive.value(20)}px;
     font-family: 'Arial Bold';
     margin-top: ${theme.responsive.value(10)}px;
     margin-bottom: ${theme.responsive.value(7)}px;
@@ -39,7 +37,7 @@ export const TeamNickname = styled.Text`
 
 export const TeamCode = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.responsive.value(25)}px;
+    font-size: ${theme.responsive.value(20)}px;
     font-family: 'Arial Bold';
     margin-top: ${theme.responsive.value(10)}px;
     margin-bottom: ${theme.responsive.value(7)}px;
@@ -48,7 +46,7 @@ export const TeamCode = styled.Text`
 
 export const TeamCity = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.responsive.value(25)}px;
+    font-size: ${theme.responsive.value(20)}px;
     font-family: 'Arial Bold';
     margin-top: ${theme.responsive.value(10)}px;
     margin-bottom: ${theme.responsive.value(7)}px;

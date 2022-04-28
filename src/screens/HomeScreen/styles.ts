@@ -2,7 +2,7 @@ import { FlatList, Image } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import { TeamModel } from '@/types';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 

@@ -20,7 +20,7 @@ export default function HomeScreen({
           <TeamContainer
             onPress={() => navigation.navigate('TeamScreen', { id: item.id })}
           >
-            <TeamImage source={{ uri: item.logo }} />
+            <TeamImage source={{ uri: item.logo }} resizeMode="contain" />
             <TeamName>{item.name}</TeamName>
           </TeamContainer>
         )}

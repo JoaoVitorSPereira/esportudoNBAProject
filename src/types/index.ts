@@ -13,7 +13,6 @@ export interface PlayersModel {
     kilograms: string;
   };
   college: string;
-  affiliation: string;
 }
 
 export interface TeamModel {
